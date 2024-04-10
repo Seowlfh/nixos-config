@@ -15,7 +15,7 @@ in
 
     startup = [
       {
-        command = "feh --bg-scale ~/.config/home-manager/home/wallpaper.jpg";
+        command = "feh --bg-scale " + ./wallpaper.jpg;
         always = true;
       }
       {
@@ -27,7 +27,7 @@ in
         always = true;
       }
       {
-        command = "betterlockscreen -u ~/.config/home-manager/home/lockscreen.jpg";
+        command = "betterlockscreen -u " + ./lockscreen.jpg;
         always = true;
       }
     ];

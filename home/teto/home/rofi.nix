@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-    enable = true;
+  enable = true;
 
-    theme = builtins.toString (pkgs.writeText "rofi-theme" ''
+  theme = builtins.toString (pkgs.writeText "rofi-theme" ''
     /**
      *
      * Author : Aditya Shakya (adi1090x)
@@ -196,5 +196,5 @@
         horizontal-align:            0.0;
         highlight:                   none;
     }
-    '');
+  '');
 }

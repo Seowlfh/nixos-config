@@ -9,6 +9,11 @@ in
   home.username = "teto";
   home.homeDirectory = "/home/teto";
 
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is

@@ -1,4 +1,4 @@
-{ pkgs , lib , ... }:
+{ pkgs, lib, ... }:
 
 {
   enable = true;
@@ -29,9 +29,9 @@
   };
 
   initExtra = ''
-  # Reeavaluate p10k config
-  [[ ! -f ~/.config/home-manager/home/p10k-config/p10k.zsh ]] || source ~/.config/home-manager/home/p10k-config/p10k.zsh
+    # Reeavaluate p10k config
+    [[ ! -f ~/.config/home-manager/home/p10k-config/p10k.zsh ]] || source ~/.config/home-manager/home/p10k-config/p10k.zsh
 
-  eval "$(direnv hook zsh)"
+    eval "$(direnv hook zsh)"
   '';
 }

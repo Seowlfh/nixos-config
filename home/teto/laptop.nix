@@ -9,6 +9,11 @@ in
   home.username = "teto";
   home.homeDirectory = "/home/teto";
 
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is
@@ -25,7 +30,6 @@ in
   home.packages = with pkgs; [
     firefox
     python311
-    # unstable.neovim
     neovim
     discord
     neofetch
@@ -56,14 +60,8 @@ in
     vim
     tmux
     arandr
-    # rustup
     poetry
-    # unstable.pre-commit
     pre-commit
-    # opam
-    # stack
-    # cabal-install
-    # ghc
 
     # Neovim's dep
     ripgrep

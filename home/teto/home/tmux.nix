@@ -1,8 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
-    enable = true;
+  enable = true;
 
-    escapeTime = 0;
-    newSession = true;
-    terminal = "screen-256color";
+  escapeTime = 0;
+  newSession = true;
+  terminal = "screen-256color";
 }

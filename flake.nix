@@ -49,6 +49,8 @@
         };
       };
 
+      formatter.${system} = pkgs.nixpkgs-fmt;
+
       nixosConfigurations = import ./hosts { inherit pkgs lib system; };
 
       homeConfigurations = import ./home { inherit pkgs home-manager unstable; };
