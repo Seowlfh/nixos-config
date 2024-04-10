@@ -1,8 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, home-manager, unstable, ... }:
 
 let
-  unstable = import <nixos-unstable> { config.allowUnfree = true; };
-
   lib = pkgs.lib;
 in
 {
@@ -27,7 +25,8 @@ in
   home.packages = with pkgs; [
     firefox
     python311
-    unstable.neovim
+    # unstable.neovim
+    neovim
     discord
     neofetch
     scrot
@@ -57,13 +56,14 @@ in
     vim
     tmux
     arandr
-    rustup
+    # rustup
     poetry
-    unstable.pre-commit
-    opam
-    stack
-    cabal-install
-    ghc
+    # unstable.pre-commit
+    pre-commit
+    # opam
+    # stack
+    # cabal-install
+    # ghc
 
     # Neovim's dep
     ripgrep
@@ -75,21 +75,22 @@ in
     wget
 
     # LSP
-    cmake-language-server # Cmake
-    nil # Nix
-    lua-language-server # Lua
-    texlab # LaTex
-    ocamlPackages.ocaml-lsp
-    unstable.haskellPackages.haskell-language-server
-    dockerfile-language-server-nodejs
-    docker-compose-language-service
-    nodePackages_latest.pyright
+    # cmake-language-server # Cmake
+    # nil # Nix
+    # lua-language-server # Lua
+    # texlab # LaTex
+    # ocamlPackages.ocaml-lsp
+    # unstable.haskellPackages.haskell-language-server
+    # haskellPackages.haskell-language-server
+    # dockerfile-language-server-nodejs
+    # docker-compose-language-service
+    # nodePackages_latest.pyright
 
     # Formatters
-    nixpkgs-fmt
-    stylua
+    # nixpkgs-fmt
+    # stylua
 
-    qemu
+    # qemu
 
     pandoc
     texliveSmall

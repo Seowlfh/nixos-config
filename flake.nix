@@ -7,7 +7,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # Home-manager
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager?ref=release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -30,6 +30,6 @@
 
       nixosConfigurations = import ./hosts { inherit pkgs lib system; };
 
-      homeConfigurations = import ./home { inherit pkgs home-manager; };
+      homeConfigurations = import ./home { inherit pkgs home-manager unstable; };
     };
 }
