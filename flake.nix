@@ -27,6 +27,16 @@
       lib = nixpkgs.lib;
     in
     {
+      devShells.${system}.default = pkgs.mkShell {
+        NIX_CONFIG = "extra-experimental-features = nix-command flakes";
+	nativeBuildInputs = builtins.attrValues {
+	  inherit (pkgs)
+	    home-manager
+	    git
+	    vim
+	    ;
+	};
+      };
 
       nixosConfigurations = import ./hosts { inherit pkgs lib system; };
 
