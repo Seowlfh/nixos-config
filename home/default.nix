@@ -5,4 +5,10 @@
     inherit pkgs;
     # extraSpecialArgs = ? ;
   };
+
+  "teto@desktop" = home-manager.lib.homeManagerConfiguration {
+    modules = [ ./teto/desktop.nix ];
+    inherit pkgs;
+    # extraSpecialArgs = ? ;
+  };
 }
