@@ -74,8 +74,8 @@ in
 
     # LSP
     # cmake-language-server # Cmake
-    # nil # Nix
-    # lua-language-server # Lua
+    nil # Nix
+    lua-language-server # Lua
     # texlab # LaTex
     # ocamlPackages.ocaml-lsp
     # unstable.haskellPackages.haskell-language-server
