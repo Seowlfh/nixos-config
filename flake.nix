@@ -11,7 +11,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -51,7 +51,7 @@
 
       formatter.${system} = pkgs.nixpkgs-fmt;
 
-      nixosConfigurations = import ./hosts { inherit pkgs lib system; };
+      nixosConfigurations = import ./hosts { inherit inputs pkgs lib system; };
 
       homeConfigurations = import ./home { inherit pkgs home-manager unstable; };
     };
