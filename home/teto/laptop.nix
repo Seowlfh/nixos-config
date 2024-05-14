@@ -45,7 +45,6 @@ in
     xdotool
     pstree
     htop
-    thunderbird
     unzip
     tree
     cmake
@@ -136,4 +135,8 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  accounts.email.accounts = import ./home/email.nix;
+  
+  programs.thunderbird = import ./home/thunderbird.nix;
 }
