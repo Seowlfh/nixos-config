@@ -27,79 +27,7 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    firefox
-    python311
-    # unstable.neovim
-    neovim
-    discord
-    neofetch
-    scrot
-    spotify
-    man-pages
-    man-pages-posix
-    gdb
-    gnumake
-    feh
-    zathura
-    latexrun
-    xdotool
-    pstree
-    htop
-    thunderbird
-    unzip
-    tree
-    cmake
-    valgrind
-    anki
-    file
-    bat
-    xsel
-    slack
-    pavucontrol
-    gcc
-    vim
-    tmux
-    arandr
-    # rustup
-    poetry
-    # unstable.pre-commit
-    pre-commit
-    # opam
-    # stack
-    # cabal-install
-    # ghc
-
-    # Neovim's dep
-    ripgrep
-    clang-tools
-    bear
-
-    # Utils
-    xclip
-    wget
-
-    # LSP
-    # cmake-language-server # Cmake
-    nil # Nix
-    lua-language-server # Lua
-    # texlab # LaTex
-    # ocamlPackages.ocaml-lsp
-    # unstable.haskellPackages.haskell-language-server
-    # haskellPackages.haskell-language-server
-    # dockerfile-language-server-nodejs
-    # docker-compose-language-service
-    # nodePackages_latest.pyright
-
-    # Formatters
-    # nixpkgs-fmt
-    # stylua
-
-    # qemu
-
-    pandoc
-    texliveSmall
-  ];
+  home.packages = import ./common/packages.nix { inherit pkgs; };
 
 
   # You can also manage environment variables but you will have to manually
@@ -113,7 +41,6 @@ in
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    EDITOR = "nvim";
     TERMINAL = "kitty";
   };
 
@@ -143,4 +70,6 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.neovim = import ./home/neovim.nix;
 }
