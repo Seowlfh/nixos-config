@@ -16,7 +16,7 @@
   ];
 
   dirHashes = {
-    cpp = "$HOME/yaka/cpp_workshop/";
+    conf = "/home/teto/prog/nixos-config/";
   };
 
   enableAutosuggestions = true;

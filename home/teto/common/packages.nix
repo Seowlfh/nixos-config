@@ -29,7 +29,6 @@ with pkgs; [
     gcc
     vim
     tmux
-    arandr
     poetry
     pre-commit
 

@@ -72,4 +72,6 @@ in
   programs.home-manager.enable = true;
 
   programs.neovim = import ./home/neovim.nix;
+
+  programs.autorandr = import ./home/arandr.nix;
 }
