@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs , lib , isDesktop ? false , ... }:
 
 let
   mod = "Mod4";
@@ -30,7 +30,12 @@ in
         command = "betterlockscreen -u " + ./lockscreen.jpg;
         always = true;
       }
-    ];
+    ] ++ (
+        if isDesktop then [{
+            command = "autorandr -c desktop";
+            always = true;
+        }] else []
+    );
 
     gaps = {
       inner = 10;
@@ -45,6 +50,7 @@ in
       "${mod}+Shift+m" = "exec ${pkgs.firefox}/bin/firefox";
       "${mod}+Shift+b" = "exec systemctl poweroff";
       "${mod}+Shift+r" = "exec systemctl reboot";
+      "${mod}+Shift+v" = "exec systemctl suspend";
       "${mod}+Shift+x" = "exec betterlockscreen -l";
       "--release ${mod}+Shift+s" = "exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'";
       "${mod}+Shift+f" = "exec scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'";

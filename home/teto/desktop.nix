@@ -44,7 +44,7 @@ in
     TERMINAL = "kitty";
   };
 
-  xsession.windowManager.i3 = import ./home/i3.nix { inherit pkgs lib; };
+  xsession.windowManager.i3 = import ./home/i3.nix { inherit pkgs lib true; };
 
   programs.kitty = import ./home/kitty.nix { inherit pkgs; };
   programs.zsh = import ./home/zsh.nix { inherit pkgs lib; };
@@ -72,6 +72,8 @@ in
   programs.home-manager.enable = true;
 
   programs.neovim = import ./home/neovim.nix;
+
+  programs.thunderbird = import ./home/thunderbird.nix;
 
   programs.autorandr = import ./home/arandr.nix;
 }
