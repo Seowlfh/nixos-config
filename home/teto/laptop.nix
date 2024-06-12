@@ -1,4 +1,4 @@
-{ pkgs, home-manager, unstable, ... }:
+{ pkgs,  unstable, ... }:
 
 let
   lib = pkgs.lib;
@@ -75,5 +75,5 @@ in
   
   programs.thunderbird = import ./home/thunderbird.nix;
 
-  programs.neovim = import ./home/neovim.nix;
+  programs.neovim = import ./home/neovim.nix { inherit unstable; };
 }

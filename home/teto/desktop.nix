@@ -1,4 +1,4 @@
-{ pkgs, home-manager, unstable, ... }:
+{ pkgs, unstable, ... }:
 
 let
   lib = pkgs.lib;
@@ -71,7 +71,7 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.neovim = import ./home/neovim.nix;
+  programs.neovim = import ./home/neovim.nix { inherit unstable; };
 
   programs.thunderbird = import ./home/thunderbird.nix;
 
