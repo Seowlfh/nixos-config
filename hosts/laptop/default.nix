@@ -5,20 +5,10 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/users/teto.nix
+      ../common/libvirt.nix
+      ../common/nix.nix
+      ../common/xserver.nix
     ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
-  };
-
-  nix.optimise = {
-    automatic = true;
-    dates = [ "1w" ];
-  };
 
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.registry.nixpkgs-unstable.flake = nixpkgs-unstable;
@@ -26,6 +16,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 2;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,21 +48,6 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "alt-intl";
-    xkbOptions = "caps:escape";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -95,9 +71,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
