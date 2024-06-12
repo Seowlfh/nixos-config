@@ -19,7 +19,7 @@
     conf = "/home/teto/prog/nixos-config/";
   };
 
-  enableAutosuggestions = true;
+  autosuggestion.enable = true;
 
   oh-my-zsh = {
     enable = true;

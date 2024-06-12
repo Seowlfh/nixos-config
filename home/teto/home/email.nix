@@ -4,8 +4,8 @@
         realName = "Théo Gardet";
         signature = {
             showSignature = "append";
-            signatureDelimiter = "-- ";
             text = ''
+            -- 
             Théo Gardet
             GISTRE - YAKA - Respo CPP
             '';
