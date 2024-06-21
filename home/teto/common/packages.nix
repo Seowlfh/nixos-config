@@ -20,7 +20,7 @@ with pkgs; [
     tree
     cmake
     valgrind
-    anki
+    anki-bin
     file
     bat
     xsel
@@ -31,6 +31,7 @@ with pkgs; [
     tmux
     poetry
     pre-commit
+    glab
 
     # Neovim's dep
     ripgrep
@@ -43,6 +44,9 @@ with pkgs; [
     # LSP
     nil # Nix
     lua-language-server # Lua
+    # Formatters
+    stylua
+    nixpkgs-fmt
 
     # Latex/Md
     pandoc

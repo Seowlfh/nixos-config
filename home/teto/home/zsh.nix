@@ -15,9 +15,14 @@
     }
   ];
 
-  dirHashes = {
-    conf = "/home/teto/prog/nixos-config/";
-  };
+  shellAliases = {
+    conf = "cd $HOME/prog/nixos-config/";
+    yaka = "cd $HOME/yaka/";
+    wpis = "cd $HOME/yaka/piscine";
+  } // (builtins.listToAttrs (map (e: 
+      { name = e; value = "cd $HOME/yaka/piscine/exercises-${e}"; }
+    ) [ "c" "shell" "misc" "makefile" ]
+  ));
 
   autosuggestion.enable = true;
 
