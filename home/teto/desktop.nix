@@ -44,7 +44,7 @@ in
     TERMINAL = "kitty";
   };
 
-  xsession.windowManager.i3 = import ./home/i3.nix { inherit pkgs lib true; };
+  xsession.windowManager.i3 = import ./home/i3.nix { inherit pkgs lib; isDesktop = true; };
 
   programs.kitty = import ./home/kitty.nix { inherit pkgs; };
   programs.zsh = import ./home/zsh.nix { inherit pkgs lib; };
