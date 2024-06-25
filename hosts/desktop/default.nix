@@ -12,6 +12,7 @@
       ../common/users/teto.nix
       ../common/nix.nix
       ../common/xserver.nix
+      ../common/libvirt.nix
     ];
 
   # Bootloader.
