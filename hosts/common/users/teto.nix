@@ -5,7 +5,14 @@
   users.users.teto = {
     isNormalUser = true;
     description = "teto";
-    extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "docker" 
+      "tty" 
+      "dialout" 
+      "libvirtd" # For desktop only, see https://nixos.wiki/wiki/Virt-manager
+    ];
     packages = with pkgs; [ ];
 
     shell = pkgs.zsh;
