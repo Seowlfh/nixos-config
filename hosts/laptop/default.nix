@@ -10,6 +10,8 @@
       ../common/xserver.nix
     ];
 
+  nix.package = pkgs.nixVersions.git;
+
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.registry.nixpkgs-unstable.flake = nixpkgs-unstable;
 

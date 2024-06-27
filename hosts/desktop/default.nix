@@ -15,6 +15,10 @@
       ../common/libvirt.nix
     ];
 
+  # Temporary hack to get nix 2.21+ in order for the store
+  # to not consider '.' as an illegal character for store paths
+  nix.package = pkgs.nixVersions.git;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
