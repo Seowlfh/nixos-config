@@ -19,6 +19,8 @@
   # to not consider '.' as an illegal character for store paths
   nix.package = pkgs.nixVersions.git;
 
+  programs.dconf.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

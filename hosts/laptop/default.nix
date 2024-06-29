@@ -15,6 +15,8 @@
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.registry.nixpkgs-unstable.flake = nixpkgs-unstable;
 
+  programs.dconf.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
