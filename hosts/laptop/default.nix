@@ -5,7 +5,6 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/users/teto.nix
-      ../common/libvirt.nix
       ../common/nix.nix
       ../common/podman.nix
       ../common/documentation.nix
