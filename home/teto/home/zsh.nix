@@ -19,11 +19,12 @@
     conf = "cd $HOME/prog/nixos-config/";
     yaka = "cd $HOME/yaka/";
     wpis = "cd $HOME/yaka/piscine";
-  } // (builtins.listToAttrs (map (e: 
-      { name = e; value = "cd $HOME/yaka/piscine/exercises-${e}"; }
-    ) [ "c" "shell" "misc" "makefile" ]
-  ));
-
+    prac = "cd $HOME/yaka/piscine/practicals";
+    misc = "cd $HOME/yaka/piscine/exercises-misc";
+    c = "cd $HOME/yaka/piscine/exercises-c";
+    shel = "cd $HOME/yaka/piscine/exercises-shell";
+    tool = "cd $HOME/yaka/toolchain/";
+  };
   autosuggestion.enable = true;
 
   oh-my-zsh = {

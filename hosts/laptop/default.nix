@@ -7,6 +7,8 @@
       ../common/users/teto.nix
       ../common/libvirt.nix
       ../common/nix.nix
+      ../common/podman.nix
+      ../common/documentation.nix
       ../common/xserver.nix
     ];
 

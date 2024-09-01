@@ -12,7 +12,7 @@
       ../common/users/teto.nix
       ../common/nix.nix
       ../common/xserver.nix
-      ../common/libvirt.nix
+      ../common/documentation.nix
     ];
 
   # Temporary hack to get nix 2.21+ in order for the store

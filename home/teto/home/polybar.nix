@@ -256,7 +256,7 @@
         format-charging-foreground = color.white;
 
 
-        label-discharging = "%percentage%%";
+        label-discharging = "%percentage%% (%time%)";
         format-discharging = "<ramp-capacity> <label-discharging>";
         format-discharging-foreground = color.orange;
 
