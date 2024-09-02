@@ -13,6 +13,7 @@
       ../common/nix.nix
       ../common/xserver.nix
       ../common/documentation.nix
+      ../common/libvirt.nix
     ];
 
   # Temporary hack to get nix 2.21+ in order for the store
