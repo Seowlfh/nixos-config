@@ -1,5 +1,21 @@
 { pkgs, lib, ... }:
 
+let
+  /*
+    Create an attribute set from dir, which each name being a directory in dir,
+    and each value the full path the this directory. 
+
+    This allows for easely creating aliases to all directories in a directory.
+  */
+  aliasToDir = dir: 
+    (lib.attrsets.mapAttrs 
+        (n: v: dir + n)  
+        (lib.attrsets.filterAttrs 
+          (n: v: v == "directory")
+          (builtins.readDir dir)
+        )
+    );
+in
 {
   enable = true;
   plugins = [
@@ -17,14 +33,10 @@
 
   shellAliases = {
     conf = "cd $HOME/prog/nixos-config/";
-    yaka = "cd $HOME/yaka/";
-    wpis = "cd $HOME/yaka/piscine";
-    prac = "cd $HOME/yaka/piscine/practicals";
-    misc = "cd $HOME/yaka/piscine/exercises-misc";
-    c = "cd $HOME/yaka/piscine/exercises-c";
-    shel = "cd $HOME/yaka/piscine/exercises-shell";
     tool = "cd $HOME/yaka/toolchain/";
-  };
+  } // (aliasToDir "/home/teto/school/s9/")
+    // (aliasToDir "/home/teto/acu/piscine/");
+
   autosuggestion.enable = true;
 
   oh-my-zsh = {
