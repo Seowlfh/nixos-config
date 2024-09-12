@@ -14,6 +14,7 @@
       ../common/xserver.nix
       ../common/documentation.nix
       ../common/libvirt.nix
+      ../common/openssh.nix
     ];
 
   # Temporary hack to get nix 2.21+ in order for the store
@@ -127,11 +128,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

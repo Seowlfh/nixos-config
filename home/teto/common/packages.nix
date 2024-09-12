@@ -51,4 +51,7 @@ with pkgs; [
     # Latex/Md
     pandoc
     texliveSmall
+
+    krb5
+    sshfs
   ]
