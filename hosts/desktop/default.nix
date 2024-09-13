@@ -15,6 +15,7 @@
       ../common/documentation.nix
       ../common/libvirt.nix
       ../common/openssh.nix
+      ../common/podman.nix
     ];
 
   # Temporary hack to get nix 2.21+ in order for the store
