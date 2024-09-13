@@ -1,4 +1,4 @@
-{ pkgs,  unstable, ... }:
+{ config, pkgs, unstable, ... }:
 
 let
   lib = pkgs.lib;
@@ -47,7 +47,7 @@ in
   xsession.windowManager.i3 = import ./home/i3.nix { inherit pkgs lib; };
 
   programs.kitty = import ./home/kitty.nix { inherit pkgs; };
-  programs.zsh = import ./home/zsh.nix { inherit pkgs lib; };
+  programs.zsh = import ./home/zsh.nix { inherit config pkgs lib; };
   programs.rofi = import ./home/rofi.nix { inherit pkgs; };
   programs.tmux = import ./home/tmux.nix { inherit pkgs; };
 

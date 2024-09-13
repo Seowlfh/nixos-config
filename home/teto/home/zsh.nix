@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   /*
@@ -32,10 +32,10 @@ in
   ];
 
   shellAliases = {
-    conf = "cd $HOME/prog/nixos-config/";
-    tool = "cd $HOME/yaka/toolchain/";
-  } // (aliasToDir "/home/teto/school/s9/")
-    // (aliasToDir "/home/teto/acu/piscine/");
+    conf = "cd ${config.home.homeDirectory}/prog/nixos-config/";
+    tool = "cd ${config.home.homeDirectory}/yaka/toolchain/";
+  } // (aliasToDir "${config.home.homeDirectory}/school/s9/")
+    // (aliasToDir "${config.home.homeDirectory}/acu/piscine/");
 
   autosuggestion.enable = true;
 
