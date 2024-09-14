@@ -4,6 +4,14 @@ let
   lib = pkgs.lib;
 in
 {
+  _module.args = {
+    inherit unstable;
+  };
+
+  imports = [
+    ./home/neovim.nix
+    ./home/emacs.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "teto";
@@ -70,8 +78,6 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.neovim = import ./home/neovim.nix { inherit unstable; };
 
   programs.thunderbird = import ./home/thunderbird.nix;
 

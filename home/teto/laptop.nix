@@ -4,6 +4,15 @@ let
   lib = pkgs.lib;
 in
 {
+  _module.args = {
+    inherit unstable;
+  };
+
+  imports = [
+    ./home/neovim.nix
+    ./home/emacs.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "teto";
@@ -74,6 +83,4 @@ in
   accounts.email.accounts = import ./home/email.nix;
   
   programs.thunderbird = import ./home/thunderbird.nix;
-
-  programs.neovim = import ./home/neovim.nix { inherit unstable; };
 }
