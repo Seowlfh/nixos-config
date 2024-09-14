@@ -36,6 +36,7 @@ with pkgs; [
     # Neovim's dep
     ripgrep
     clang-tools
+    go # gitlab.nvim
 
     # Utils
     xclip
