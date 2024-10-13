@@ -32,6 +32,7 @@ with pkgs; [
     poetry
     pre-commit
     glab
+    bear
 
     # Neovim's dep
     ripgrep
@@ -55,4 +56,6 @@ with pkgs; [
 
     krb5
     sshfs
+
+    obs-studio
   ]

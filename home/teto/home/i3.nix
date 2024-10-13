@@ -37,10 +37,6 @@ in
         }] else []
     );
 
-    gaps = {
-      inner = 10;
-    };
-
     window = {
       titlebar = false;
       border = 0;
