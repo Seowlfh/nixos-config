@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nvidia.nix
       ../common/users/teto.nix
       ../common/nix.nix
       ../common/xserver.nix
