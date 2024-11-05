@@ -16,7 +16,7 @@ with pkgs; [
     xdotool
     pstree
     htop
-    unzip
+    zip unzip
     tree
     cmake
     valgrind
