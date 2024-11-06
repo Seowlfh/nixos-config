@@ -33,6 +33,7 @@ with pkgs; [
     pre-commit
     glab
     bear
+    any-nix-shell
 
     # Neovim's dep
     ripgrep
