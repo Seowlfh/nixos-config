@@ -46,8 +46,8 @@
 
     enable_audio_bell = "no";
 
-    window_margin_width = "5.0";
-    window_padding_width = "5.0";
+    # window_margin_width = "5.0";
+    # window_padding_width = "5.0";
 
     resize_in_steps = "yes";
 
