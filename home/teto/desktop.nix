@@ -11,6 +11,7 @@ in
   imports = [
     ./home/neovim.nix
     ./home/emacs.nix
+    ./home/arandr.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -80,6 +81,4 @@ in
   programs.home-manager.enable = true;
 
   programs.thunderbird = import ./home/thunderbird.nix;
-
-  programs.autorandr = import ./home/arandr.nix;
 }
