@@ -26,10 +26,11 @@ in
         command = "systemctl --user restart polybar";
         always = true;
       }
-      {
-        command = "betterlockscreen -u " + ./lockscreen.jpg;
-        always = true;
-      }
+      # FIXME: betterlockscreen fails to verify my password everytime
+      # {
+      #   command = "betterlockscreen -u " + ./lockscreen.jpg;
+      #   always = true;
+      # }
     ] ++ (
         if isDesktop then [{
             command = "autorandr -c desktop";
@@ -47,7 +48,8 @@ in
       "${mod}+Shift+b" = "exec systemctl poweroff";
       "${mod}+Shift+r" = "exec systemctl reboot";
       "${mod}+Shift+v" = "exec systemctl suspend";
-      "${mod}+Shift+x" = "exec betterlockscreen -l";
+      # FIXME: betterlockscreen fails to verify my password everytime
+      # "${mod}+Shift+x" = "exec betterlockscreen -l";
       "--release ${mod}+Shift+s" = "exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'";
       "${mod}+Shift+f" = "exec scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'";
       "${mod}+Shift+t" = "exec tmux";
