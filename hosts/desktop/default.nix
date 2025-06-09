@@ -17,6 +17,7 @@
       ../common/libvirt.nix
       ../common/openssh.nix
       ../common/podman.nix
+      ../common/environment.nix
     ];
 
   # Temporary hack to get nix 2.21+ in order for the store
@@ -60,7 +61,7 @@
 
   services.printing.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -114,7 +115,8 @@
   fonts.fontDir.enable = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

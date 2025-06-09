@@ -12,6 +12,7 @@
       ../common/xserver.nix
       ../common/openssh.nix
       ../common/libvirt.nix
+      ../common/environment.nix
     ];
 
   nix.package = pkgs.nixVersions.git;
@@ -65,7 +66,7 @@
     mediaKeys.enable = true;
   };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -119,7 +120,8 @@
   fonts.fontDir.enable = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
 
   # Prevent overheating for Intel CPUs
