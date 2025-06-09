@@ -46,7 +46,7 @@ in
     ];
   };
 
-  shellInit = ''
+  initContent = ''
     # Reeavaluate p10k config
     [[ ! -f ~/.config/home-manager/home/p10k-config/p10k.zsh ]] || source ~/.config/home-manager/home/p10k-config/p10k.zsh
 
