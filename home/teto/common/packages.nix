@@ -3,37 +3,25 @@ with pkgs; [
     firefox
     python311
     discord
-    neofetch
     scrot
     spotify
     man-pages
     man-pages-posix
-    gdb
-    gnumake
     feh
     zathura
     latexrun
-    xdotool
-    pstree
     htop
     zip unzip
     tree
-    cmake
-    valgrind
     anki-bin
     file
-    bat
     xsel
     slack
     pavucontrol
-    gcc
     vim
     tmux
-    poetry
     pre-commit
-    glab
     bear
-    any-nix-shell
 
     # Neovim's dep
     ripgrep
@@ -55,8 +43,5 @@ with pkgs; [
     pandoc
     texliveSmall
 
-    krb5
     sshfs
-
-    obs-studio
   ]
