@@ -2,6 +2,19 @@
 
 let
   lib = pkgs.lib;
+
+  hardware_stuff = {
+    hwmon-path = "";
+
+    network = {
+      interface = "wlp4s0";
+    };
+
+    battery = {
+      name = "";
+      adapter = "";
+    };
+  };
 in
 {
   _module.args = {
@@ -60,7 +73,7 @@ in
   programs.rofi = import ./home/rofi.nix { inherit pkgs; };
   programs.tmux = import ./home/tmux.nix { inherit pkgs; };
 
-  services.polybar = import ./home/polybar.nix { inherit pkgs; };
+  services.polybar = import ./home/polybar.nix { inherit pkgs; config = hardware_stuff; };
   services.betterlockscreen = import ./home/betterlockscreen.nix { inherit pkgs; };
 
   programs.git = {

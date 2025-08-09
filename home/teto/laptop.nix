@@ -2,6 +2,19 @@
 
 let
   lib = pkgs.lib;
+
+  hardware_stuff = {
+    hwmon-path = "/sys/devices/pci0000:00/0000:00:1c.0/0000:39:00.0/nvme/nvme0/hwmon0/temp2_input";
+
+    network = {
+      interface = "wlp0s20f3";
+    };
+
+    battery = {
+      name = "BAT0";
+      adapter = "AC";
+    };
+  };
 in
 {
   _module.args = {
@@ -60,7 +73,7 @@ in
   programs.rofi = import ./home/rofi.nix { inherit pkgs; };
   programs.tmux = import ./home/tmux.nix { inherit pkgs; };
 
-  services.polybar = import ./home/polybar.nix { inherit pkgs; };
+  services.polybar = import ./home/polybar.nix { inherit pkgs; config = hardware_stuff; };
   services.betterlockscreen = import ./home/betterlockscreen.nix { inherit pkgs; };
 
   programs.git = {

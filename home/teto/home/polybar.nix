@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   enable = true;
 
@@ -119,7 +119,7 @@
 
         thermal-zone = 0;
 
-        hwmon-path = "/sys/devices/pci0000:00/0000:00:1c.0/0000:39:00.0/nvme/nvme0/hwmon0/temp2_input";
+        hwmon-path = config.hwmon-path;
 
         warn-temperature = 65;
 
@@ -244,8 +244,8 @@
         full-at = 100;
         low-at = 20;
 
-        battery = "BAT0";
-        adapter = "AC";
+        battery = config.battery.name;
+        adapter = config.battery.adapter;
 
         poll-interval = 5;
 
@@ -284,7 +284,7 @@
 
       "module/network" = {
         type = "internal/network";
-        interface = "wlp0s20f3";
+        interface = config.network.interface;
 
         interval = "3.0";
 
