@@ -4,21 +4,23 @@
 
 { inputs, pkgs, ... }:
 
+let
+  lib = pkgs.lib;
+in
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./nvidia.nix
-      ../common/users/teto.nix
-      ../common/nix.nix
-      ../common/xserver.nix
-      ../common/documentation.nix
-      ../common/libvirt.nix
-      ../common/openssh.nix
-      ../common/podman.nix
-      ../common/environment.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./nvidia.nix
+    ../common/users/teto.nix
+    ../common/nix.nix
+    ../common/xserver.nix
+    ../common/documentation.nix
+    ../common/libvirt.nix
+    ../common/openssh.nix
+    ../common/podman.nix
+    ../common/environment.nix
+  ];
 
   # Temporary hack to get nix 2.21+ in order for the store
   # to not consider '.' as an illegal character for store paths
@@ -87,11 +89,31 @@
   services.actkbd = {
     enable = true;
     bindings = [
-      { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 5"; }
-      { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 5"; }
-      { keys = [ 113 ]; events = [ "key" ]; command = "${pkgs.alsa-utils}/bin/amixer -q set Master toggle"; }
-      { keys = [ 114 ]; events = [ "key" ]; command = "${pkgs.alsa-utils}/bin/amixer -q set Master 8%-"; }
-      { keys = [ 115 ]; events = [ "key" ]; command = "${pkgs.alsa-utils}/bin/amixer -q set Master 8%+"; }
+      {
+        keys = [ 224 ];
+        events = [ "key" ];
+        command = "/run/current-system/sw/bin/light -U 5";
+      }
+      {
+        keys = [ 225 ];
+        events = [ "key" ];
+        command = "/run/current-system/sw/bin/light -A 5";
+      }
+      {
+        keys = [ 113 ];
+        events = [ "key" ];
+        command = "${pkgs.alsa-utils}/bin/amixer -q set Master toggle";
+      }
+      {
+        keys = [ 114 ];
+        events = [ "key" ];
+        command = "${pkgs.alsa-utils}/bin/amixer -q set Master 8%-";
+      }
+      {
+        keys = [ 115 ];
+        events = [ "key" ];
+        command = "${pkgs.alsa-utils}/bin/amixer -q set Master 8%+";
+      }
     ];
   };
 
