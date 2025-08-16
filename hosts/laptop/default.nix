@@ -81,8 +81,11 @@
   # Shell
   programs.zsh.enable = true;
 
-  # Control keys for brightness
-  programs.light.enable = true;
+  programs.light= {
+    enable = true;
+    brightnessKeys.enable = true;
+  };
+
   services.actkbd.enable = true;
   services.actkbd.bindings = [
     # Mute
