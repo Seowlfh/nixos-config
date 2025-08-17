@@ -61,19 +61,22 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  services.pulseaudio.enable = false; # Use Pipewire, the modern sound subsystem
+
+  security.rtkit.enable = true; # Enable RealtimeKit for audio purposes
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    # Uncomment the following line if you want to use JACK applications
+    # jack.enable = true;
+  };
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
   };
 
   # Allow unfree packages
@@ -91,7 +94,7 @@
   services.actkbd.bindings = [
     # Mute
     { keys = [ 113 ]; events = [ "key" ];
-      command = "${pkgs.alsa-utils}/bin/amixer -q set Master toggle";
+      command = "${pkgs.alsa-utils}/bin/amixer -q set Master toggle 2>> /tmp/stderr >> /tmp/stdout";
     }
     # Volume down
     { keys = [ 114 ]; events = [ "key" "rep" ];

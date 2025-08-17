@@ -44,4 +44,6 @@ with pkgs; [
     texliveSmall
 
     sshfs
+
+    alsa-utils
   ]

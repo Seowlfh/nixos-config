@@ -53,6 +53,9 @@ in
       "--release ${mod}+Shift+s" = "exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'";
       "${mod}+Shift+f" = "exec scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'";
       "${mod}+Shift+t" = "exec tmux";
+      "XF86AudioMute" = "exec ${pkgs.alsa-utils}/bin/amixer -q set Master toggle";
+      "XF86AudioLowerVolume"= "exec ${pkgs.alsa-utils}/bin/amixer -q set Master 5%- unmute";
+      "XF86AudioRaiseVolume"= "exec ${pkgs.alsa-utils}/bin/amixer -q set Master 5%+ unmute";
     };
   };
 }
