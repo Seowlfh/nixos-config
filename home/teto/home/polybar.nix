@@ -320,5 +320,87 @@
 
         label = "%time%";
       };
+
+      "module/volume" = {
+        type = "internal/alsa";
+
+        master-soundcard = "default";
+        speaker-soundcard = "default";
+        headphone-soundcard = "default";
+        master-mixer = "Master";
+
+        # Optionally define speaker and headphone mixers
+        # Default: none
+        #;speaker-mixer = Speaker
+        # Default: none
+        #;headphone-mixer = Headphone
+
+        # NOTE: This is required if headphone_mixer is defined
+        # Use the following command to list available device controls
+        # $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f: %s\n' '\1' '\2'/e" | sort
+        # You may also need to use `amixer -c # controls` as above for the mixer names
+        # Default: none
+        #;headphone-id = 9
+
+        # Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+        # Default: false
+        #;mapped = true
+
+        # Interval for volume increase/decrease (in percent points)
+        # Default: 5
+        interval = 5;
+
+        # Available tags:
+        #   <label-volume> (default)
+        #   <ramp-volume>
+        #   <bar-volume>
+        format-volume = "<ramp-volume> <bar-volume> <label-volume>";
+        format-volume-background = color.background;
+        format-volume-padding = 2;
+
+        # Available tags:
+        #   <label-muted> (default)
+        #   <ramp-volume>
+        #   <bar-volume>
+        format-muted = "<label-muted>";
+        format-muted-prefix = "婢";
+        format-muted-background = color.background;
+        format-muted-padding = 2;
+
+        # Available tokens:
+        #   %percentage% (default)
+        label-volume = "%percentage%%";
+
+        # Available tokens:
+        #   %percentage% (default
+        label-muted = " Muted";
+        label-muted-foreground = color.foreground;
+
+        # Only applies if <ramp-volume> is used
+        ramp-volume-0 = "奄";
+        ramp-volume-1 = "奔";
+        ramp-volume-2 = "墳";
+
+        # Only applies if <bar-volume> is used
+        bar-volume-width = 10;
+        bar-volume-gradient = false;
+
+        bar-volume-indicator = "雷";
+        bar-volume-indicator-foreground = color.foreground;
+
+        bar-volume-fill = "絛";
+        bar-volume-foreground-0 = color.foreground ;
+        bar-volume-foreground-1 = color.foreground ;
+        bar-volume-foreground-2 = color.foreground ;
+
+        bar-volume-empty = "絛";
+        bar-volume-empty-foreground = color.foreground;
+
+        # If defined, it will replace <ramp-volume> when
+        # headphones are plugged in to `headphone_control_numid`
+        # If undefined, <ramp-volume> will be used for both
+        # Only applies if <ramp-volume> is used
+        ramp-headphones-0 = "";
+      };
     };
 }
