@@ -20,6 +20,7 @@ in
     ../common/openssh.nix
     ../common/podman.nix
     ../common/environment.nix
+    ../common/fonts.nix
   ];
 
   # Temporary hack to get nix 2.21+ in order for the store
@@ -133,13 +134,6 @@ in
 
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
-
-  fonts.fontDir.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

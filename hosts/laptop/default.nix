@@ -13,6 +13,7 @@
       ../common/openssh.nix
       ../common/libvirt.nix
       ../common/environment.nix
+      ../common/fonts.nix
     ];
 
   nix.package = pkgs.nixVersions.git;
@@ -122,13 +123,6 @@
 
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
-
-  fonts.fontDir.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-  ];
 
   # Prevent overheating for Intel CPUs
   services.thermald.enable = true;
