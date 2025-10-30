@@ -21,6 +21,7 @@ in
     ../common/podman.nix
     ../common/environment.nix
     ../common/fonts.nix
+    ../common/udev.nix
   ];
 
   # Temporary hack to get nix 2.21+ in order for the store

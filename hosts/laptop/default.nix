@@ -14,6 +14,7 @@
       ../common/libvirt.nix
       ../common/environment.nix
       ../common/fonts.nix
+      ../common/udev.nix
     ];
 
   nix.package = pkgs.nixVersions.git;
