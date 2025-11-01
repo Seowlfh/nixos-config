@@ -14,15 +14,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c8301182-461a-4e52-af51-8a4028f88086";
+    { device = "/dev/disk/by-uuid/4917f481-70fe-402d-87ce-2ac1f37d7785";
       fsType = "ext4";
     };
-
-  boot.initrd.luks.devices."luks-dbddadd2-07c9-454e-a865-ea1fb6742306".device = "/dev/disk/by-uuid/dbddadd2-07c9-454e-a865-ea1fb6742306";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/82C4-8FBB";
       fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices = [ ];
@@ -32,7 +31,6 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s20f0u4.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

@@ -31,12 +31,6 @@ in
     }
   ];
 
-  shellAliases = {
-    conf = "cd ${config.home.homeDirectory}/prog/nixos-config/";
-    tool = "cd ${config.home.homeDirectory}/acu/toolchain/";
-  } // (aliasToDir "${config.home.homeDirectory}/school/s9/")
-    // (aliasToDir "${config.home.homeDirectory}/acu/piscine/");
-
   autosuggestion.enable = true;
 
   oh-my-zsh = {

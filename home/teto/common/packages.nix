@@ -27,6 +27,8 @@ with pkgs; [
     ripgrep
     clang-tools
     go # gitlab.nvim
+    gnumake
+    gcc
 
     # Utils
     xclip
