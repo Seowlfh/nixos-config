@@ -4,14 +4,11 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./tlp.nix
       ../common/users/teto.nix
       ../common/nix.nix
-      ../common/podman.nix
       ../common/documentation.nix
       ../common/xserver.nix
       ../common/openssh.nix
-      ../common/libvirt.nix
       ../common/environment.nix
       ../common/fonts.nix
       ../common/udev.nix
@@ -126,7 +123,6 @@
   ];
 
   virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
 
   # Prevent overheating for Intel CPUs
   services.thermald.enable = true;

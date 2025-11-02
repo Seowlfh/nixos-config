@@ -16,9 +16,7 @@ in
     ../common/nix.nix
     ../common/xserver.nix
     ../common/documentation.nix
-    ../common/libvirt.nix
     ../common/openssh.nix
-    ../common/podman.nix
     ../common/environment.nix
     ../common/fonts.nix
     ../common/udev.nix
@@ -134,7 +132,6 @@ in
   ];
 
   virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

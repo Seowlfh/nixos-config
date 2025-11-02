@@ -16,7 +16,6 @@ with pkgs; [
     anki-bin
     file
     xsel
-    slack
     pavucontrol
     vim
     tmux
@@ -41,11 +40,5 @@ with pkgs; [
     stylua
     nixpkgs-fmt
 
-    # Latex/Md
-    pandoc
-    texliveSmall
-
     sshfs
-
-    alsa-utils
   ]

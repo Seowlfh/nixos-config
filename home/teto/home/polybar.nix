@@ -57,7 +57,7 @@
         width = "100%";
         height = 30;
 
-        offset-x = "1%";
+        # offset-x = "1%";
         # offset-y = "2%:-2";
 
         background = color.background;
@@ -69,6 +69,8 @@
         # border-bottom-size = 2;
         # border-bottom-color = color.primary;
         border-bottom-size = 0;
+
+        bottom = true;
 
         padding = 1;
         module-margin = 2;
