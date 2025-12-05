@@ -24,6 +24,7 @@ in
   imports = [
     ./home/neovim.nix
     ./home/emacs.nix
+    ./common/git.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -75,12 +76,6 @@ in
 
   services.polybar = import ./home/polybar.nix { inherit pkgs; config = hardware_stuff; };
   services.betterlockscreen = import ./home/betterlockscreen.nix { inherit pkgs; };
-
-  programs.git = {
-    enable = true;
-    userName = "Theo Gardet";
-    userEmail = "theo.gardet@epita.fr";
-  };
 
   programs.direnv = {
     enable = true;
