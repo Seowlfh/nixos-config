@@ -12,11 +12,11 @@
     # Generated via kitty +kitten themes
     selection_foreground = "#ebdbb2";
     selection_background = "#d65d0e";
-    
+
     # background = "#1d2021";
     background = "#222222";
     foreground = "#ebdbb2";
-    
+
     color0 = "#3c3836";
     color1 = "#cc241d";
     color2 = "#98971a";
@@ -33,10 +33,10 @@
     color13 = "#d3869b";
     color14 = "#8ec07c";
     color15 = "#fbf1c7";
-    
+
     cursor = "#bdae93";
     cursor_text_color = "#665c54";
-    
+
     url_color = "#458588";
 
     # Rest

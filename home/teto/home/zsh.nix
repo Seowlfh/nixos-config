@@ -7,13 +7,13 @@ let
 
     This allows for easely creating aliases to all directories in a directory.
   */
-  aliasToDir = dir: 
-    (lib.attrsets.mapAttrs 
-        (n: v: dir + n)  
-        (lib.attrsets.filterAttrs 
-          (n: v: v == "directory")
-          (builtins.readDir dir)
-        )
+  aliasToDir = dir:
+    (lib.attrsets.mapAttrs
+      (n: v: dir + n)
+      (lib.attrsets.filterAttrs
+        (n: v: v == "directory")
+        (builtins.readDir dir)
+      )
     );
 in
 {

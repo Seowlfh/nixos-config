@@ -4,12 +4,12 @@
   users.users.teto = {
     isNormalUser = true;
     description = "teto";
-    extraGroups = [ 
-      "networkmanager" 
-      "wheel" 
-      "docker" 
-      "tty" 
-      "dialout" 
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "tty"
+      "dialout"
     ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;

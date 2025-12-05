@@ -391,9 +391,9 @@
         bar-volume-indicator-foreground = color.foreground;
 
         bar-volume-fill = "絛";
-        bar-volume-foreground-0 = color.foreground ;
-        bar-volume-foreground-1 = color.foreground ;
-        bar-volume-foreground-2 = color.foreground ;
+        bar-volume-foreground-0 = color.foreground;
+        bar-volume-foreground-1 = color.foreground;
+        bar-volume-foreground-2 = color.foreground;
 
         bar-volume-empty = "絛";
         bar-volume-empty-foreground = color.foreground;

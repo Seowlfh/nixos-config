@@ -1,9 +1,9 @@
 {
-    enable = true;
+  enable = true;
 
-    profiles = {
-        "epita" = {
-            isDefault = true;
-        };
+  profiles = {
+    "epita" = {
+      isDefault = true;
     };
+  };
 }

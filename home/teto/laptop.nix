@@ -50,7 +50,7 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = import ./common/packages.nix { inherit pkgs; }; 
+  home.packages = import ./common/packages.nix { inherit pkgs; };
 
 
   # You can also manage environment variables but you will have to manually
@@ -89,6 +89,6 @@ in
   programs.home-manager.enable = true;
 
   accounts.email.accounts = import ./home/email.nix;
-  
+
   programs.thunderbird = import ./home/thunderbird.nix;
 }
