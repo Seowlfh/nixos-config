@@ -84,21 +84,9 @@ in
   # Shell
   programs.zsh.enable = true;
 
-  # Control keys for brightness
-  programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
-      {
-        keys = [ 224 ];
-        events = [ "key" ];
-        command = "/run/current-system/sw/bin/light -U 5";
-      }
-      {
-        keys = [ 225 ];
-        events = [ "key" ];
-        command = "/run/current-system/sw/bin/light -A 5";
-      }
       {
         keys = [ 113 ];
         events = [ "key" ];
