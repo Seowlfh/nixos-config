@@ -4,4 +4,9 @@ home:
 
 .PHONY: host
 host:
-	nixos-rebuild switch --flake .\#desktop
+	sudo nixos-rebuild switch --flake .\#desktop
+
+.PHONY: update
+update:
+	nix flake update
+	make host
