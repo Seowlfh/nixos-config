@@ -70,7 +70,7 @@
         # border-bottom-color = color.primary;
         border-bottom-size = 0;
 
-        bottom = true;
+        # bottom = true;
 
         padding = 1;
         module-margin = 2;

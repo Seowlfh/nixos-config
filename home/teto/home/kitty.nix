@@ -4,7 +4,7 @@
 
   font = {
     name = "FiraCode Nerd Font";
-    size = 15.3;
+    size = 17;
   };
 
   settings = {
@@ -46,9 +46,6 @@
 
     enable_audio_bell = "no";
 
-    # window_margin_width = "5.0";
-    # window_padding_width = "5.0";
-
     resize_in_steps = "yes";
 
     dynamic_background_opacity = "yes";
@@ -62,9 +59,3 @@
     remember_window_size = "yes";
   };
 }
-
-
-
-
-
-

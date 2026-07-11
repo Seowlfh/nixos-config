@@ -22,6 +22,8 @@ with pkgs; [
   tmux
   pre-commit
   bear
+  obsidian
+  syncthing
 
   # Neovim's dep
   ripgrep

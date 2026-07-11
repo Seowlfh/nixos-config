@@ -4,8 +4,8 @@
     enable = true;
     settings = {
       user = {
-        name = "Theo Gardet";
-        email = "theogardet@sfr.fr";
+        name = "seo";
+        email = "seowlfh@laposte.net";
       };
     };
   };
