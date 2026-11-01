@@ -45,4 +45,7 @@ with pkgs; [
   nixpkgs-fmt
 
   sshfs
+
+  calibre
+  kcc
 ]

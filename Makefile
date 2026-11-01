@@ -1,10 +1,10 @@
 .PHONY: home
 home:
-	home-manager switch --flake .\#desktop
+	home-manager switch --flake .\#${HOST}
 
 .PHONY: host
 host:
-	sudo nixos-rebuild switch --flake .\#desktop
+	sudo nixos-rebuild switch --flake .\#${HOST}
 
 .PHONY: update
 update:
