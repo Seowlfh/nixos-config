@@ -7,6 +7,9 @@
         name = "seo";
         email = "seowlfh@laposte.net";
       };
+      init = {
+        default_branch = "main";
+      };
     };
   };
 }
