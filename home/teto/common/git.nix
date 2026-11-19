@@ -8,7 +8,7 @@
         email = "seowlfh@laposte.net";
       };
       init = {
-        default_branch = "main";
+        defaultBranch = "main";
       };
     };
   };

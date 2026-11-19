@@ -89,4 +89,6 @@ in
   programs.home-manager.enable = true;
 
   programs.thunderbird = import ./home/thunderbird.nix;
+
+  programs.man.generateCaches = true;
 }
