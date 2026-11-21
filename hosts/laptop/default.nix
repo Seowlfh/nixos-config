@@ -77,16 +77,13 @@
     powerOnBoot = true;
   };
 
+  hardware.acpilight.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Shell
   programs.zsh.enable = true;
-
-  programs.light = {
-    enable = true;
-    brightnessKeys.enable = true;
-  };
 
   services.actkbd.enable = true;
   services.actkbd.bindings = [
