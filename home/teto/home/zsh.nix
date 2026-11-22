@@ -1,21 +1,4 @@
-{ config, pkgs, lib, ... }:
-
-let
-  /*
-    Create an attribute set from dir, which each name being a directory in dir,
-    and each value the full path the this directory. 
-
-    This allows for easely creating aliases to all directories in a directory.
-  */
-  aliasToDir = dir:
-    (lib.attrsets.mapAttrs
-      (n: v: dir + n)
-      (lib.attrsets.filterAttrs
-        (n: v: v == "directory")
-        (builtins.readDir dir)
-      )
-    );
-in
+{ pkgs, lib, ... }:
 {
   enable = true;
   plugins = [
@@ -40,9 +23,16 @@ in
     ];
   };
 
+  shellAliases = {
+    nv = "cd ~/.config/nvim/";
+    nx = "cd ~/prog/nixos-config/";
+  };
+
   initContent = ''
     # Reeavaluate p10k config
     [[ ! -f ~/.config/home-manager/home/p10k-config/p10k.zsh ]] || source ~/.config/home-manager/home/p10k-config/p10k.zsh
+
+    set -o vi
 
     eval "$(direnv hook zsh)"
   '';

@@ -81,9 +81,6 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Shell
-  programs.zsh.enable = true;
-
   services.actkbd = {
     enable = true;
     bindings = [
