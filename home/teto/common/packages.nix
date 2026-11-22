@@ -48,4 +48,9 @@ with pkgs; [
 
   calibre
   kcc
+
+  # yt-dlp
+  yt-dlp
+  ffmpeg
+  mpv
 ]
